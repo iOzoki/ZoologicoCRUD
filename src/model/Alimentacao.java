@@ -1,5 +1,5 @@
 package model;
 
 public enum Alimentacao {
-    CARNIVORO, HERBIVORO, ONIVORO
+    CARNIVORO, HERBIVORO, ONIVORO, INSETIVORO
 }
