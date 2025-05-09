@@ -1,16 +1,15 @@
 package model;
 
 public class Funcionario extends Pessoa{
-    private String cargo;
+    private Cargo cargo;
 
     public Funcionario( int ID, String nome, int idade, String cargo){
         super(ID, nome, idade);
-        this.cargo = cargo;
     }
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 

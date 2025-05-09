@@ -2,19 +2,24 @@ package model;
 
 public abstract class Animal {
     int ID;
+    String nome;
     String especie;
     int peso;
     int numeroDePatas;
-    String alimentacao;
-    String ambiente;
+    Alimentacao alimentacao;
 
-    public Animal(int ID,String especie, int peso, String alimentacao, String ambiente, int numeroDePatas) {
+    public Animal(int ID, String nome, String especie, int peso, Alimentacao alimentacao, int numeroDePatas) {
+        if(this.peso < 0 || this.numeroDePatas < 0) {
+            throw new IllegalArgumentException("Peso ou número de patas inválido!");
+        }
+        else{
         this.ID = ID;
+        this.nome = nome;
         this.especie = especie;
         this.peso = peso;
         this.alimentacao = alimentacao;
-        this.ambiente = ambiente;
         this.numeroDePatas = numeroDePatas;
+        }
     }
 
     public int getID() {
@@ -25,20 +30,20 @@ public abstract class Animal {
         this.ID = ID;
     }
 
-    public String getAlimentacao() {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Alimentacao getAlimentacao() {
         return alimentacao;
     }
 
-    public void setAlimentacao(String alimentacao) {
+    public void setAlimentacao(Alimentacao alimentacao) {
         this.alimentacao = alimentacao;
-    }
-
-    public String getAmbiente() {
-        return ambiente;
-    }
-
-    public void setAmbiente(String ambiente) {
-        this.ambiente = ambiente;
     }
 
     public String getEspecie() {

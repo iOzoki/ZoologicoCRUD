@@ -6,9 +6,14 @@ public abstract class Pessoa {
     private int idade;
 
     public Pessoa(int ID, String nome, int idade) {
-        this.ID = ID;
-        this.nome = nome;
-        this.idade = idade;
+        if(this.idade < 0 || idade > 110) {
+            throw new IllegalArgumentException("Idade inválida");
+        }
+        else {
+            this.ID = ID;
+            this.nome = nome;
+            this.idade = idade;
+        }
     }
 
     public int getID() {
