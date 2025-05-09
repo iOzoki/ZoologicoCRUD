@@ -1,18 +1,28 @@
 package model;
 
 public abstract class Animal {
+    int ID;
     String especie;
     int peso;
     int numeroDePatas;
     String alimentacao;
     String ambiente;
 
-    public Animal(String especie, int peso, String alimentacao, String ambiente, int numeroDePatas) {
+    public Animal(int ID,String especie, int peso, String alimentacao, String ambiente, int numeroDePatas) {
+        this.ID = ID;
         this.especie = especie;
         this.peso = peso;
         this.alimentacao = alimentacao;
         this.ambiente = ambiente;
         this.numeroDePatas = numeroDePatas;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getAlimentacao() {
