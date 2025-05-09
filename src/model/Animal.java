@@ -1,4 +1,5 @@
 package model;
+//Classe abstrata principal para todos seres que são animais herdarem a classe Animal
 
 public abstract class Animal {
     int ID;
